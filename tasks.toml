@@ -9,14 +9,14 @@ run = ["git add .", "bun run git-cz"]
 depends = ["buni"]
 run = "bun run git-cz"
 
+[check]
+depends = ["build", "check:*"]
+
 ["build"]
 run = "json5 src/default.json5 --out-file default.json"
 depends_post = [
 	"{% if env.CI is defined %}util:nodiff{% else %}util:donothing{% endif %}",
 ]
-
-[check]
-depends = ["check:*"]
 
 ["check:biome"]
 run = "biome {% if env.LINT is undefined %}check --write{% else %}ci{% endif %} --error-on-warnings"
