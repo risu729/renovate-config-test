@@ -22,14 +22,12 @@
 		{
 			customType: "regex",
 			description: "Updates tool versions in mise.toml (default registry)",
-			// prettier-ignore
 			fileMatch: ["mise\.toml", "mise/config\\.toml"],
 			// cspell:ignore datasource
 			datasourceTemplate: "{{#unless datasource}}github-releases{{else}}{{datasource}}{{/unless}}",
 			matchStrings: [
 				// test: https://regex101.com/r/8grHta
-				// prettier-ignore
-				"# renovate:(?: datasource=(?<datasource>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?(?: extractVersion=(?<extractVersion>.+?))?\\n\"?(?<depName>[^:]+?)\"? *= *\"(?<currentValue>.+?)\"",
+				'# renovate:(?: datasource=(?<datasource>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?(?: extractVersion=(?<extractVersion>.+?))?\\n"?(?<depName>[^:]+?)"? *= *"(?<currentValue>.+?)"',
 			],
 		},
 		// renovate does not support backends
@@ -37,37 +35,31 @@
 		{
 			customType: "regex",
 			description: "Updates tool versions in mise.toml (Cargo backend)",
-			// prettier-ignore
 			fileMatch: ["mise\.toml", "mise/config\\.toml"],
 			datasourceTemplate: "crate",
 			matchStrings: [
 				// test: https://regex101.com/r/K6Imdx
-				// prettier-ignore
-				"\"cargo:(?<depName>.+?)\" *= *\"(?<currentValue>.+?)\"",
+				'"cargo:(?<depName>.+?)" *= *"(?<currentValue>.+?)"',
 			],
 		},
 		{
 			customType: "regex",
 			description: "Updates tool versions in mise.toml (npm backend)",
-			// prettier-ignore
 			fileMatch: ["mise\.toml", "mise/config\\.toml"],
 			datasourceTemplate: "npm",
 			matchStrings: [
 				// test: https://regex101.com/r/avOpdb
-				// prettier-ignore
-				"\"npm:(?<depName>.+?)\" *= *\"(?<currentValue>.+?)\"",
+				'"npm:(?<depName>.+?)" *= *"(?<currentValue>.+?)"',
 			],
 		},
 		{
 			customType: "regex",
 			description: "Updates tool versions in mise.toml (ubi, aqua backend)",
-			// prettier-ignore
 			fileMatch: ["mise\.toml", "mise/config\\.toml"],
 			datasourceTemplate: "github-releases",
 			matchStrings: [
 				// test: https://regex101.com/r/RRA3NI
-				// prettier-ignore
-				"(?:# renovate: extractVersion=(?<extractVersion>.+?)\\n)?\"(?:ubi|aqua):(?<depName>.+?)\" *= *\".*?(?<currentValue>\\d+\\..+?)\"",
+				'(?:# renovate: extractVersion=(?<extractVersion>.+?)\\n)?"(?:ubi|aqua):(?<depName>.+?)" *= *".*?(?<currentValue>\\d+\\..+?)"',
 			],
 		},
 		{
@@ -77,10 +69,7 @@
 			datasourceTemplate: "github-releases",
 			depNameTemplate: "mise",
 			packageNameTemplate: "jdx/mise",
-			matchStrings: [
-				// prettier-ignore
-				"min_version = \"(?<currentValue>.+)\"",
-			],
+			matchStrings: ['min_version = "(?<currentValue>.+)"'],
 		},
 		{
 			customType: "regex",
@@ -89,10 +78,7 @@
 			datasourceTemplate: "github-releases",
 			depNameTemplate: "mise",
 			packageNameTemplate: "jdx/mise",
-			matchStrings: [
-				// prettier-ignore
-				"version: (?<currentValue>.+)",
-			],
+			matchStrings: ["version: (?<currentValue>.+)"],
 		},
 	],
 	packageRules: [
