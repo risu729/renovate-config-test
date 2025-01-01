@@ -9,6 +9,7 @@
 		":automergeDigest",
 		":prHourlyLimitNone",
 		":prConcurrentLimitNone",
+		"customManagers:biomeVersions",
 	],
 	labels: [
 		"dependencies",
@@ -91,19 +92,6 @@
 			matchStrings: [
 				// prettier-ignore
 				"version: (?<currentValue>.+)",
-			],
-		},
-		{
-			customType: "regex",
-			description: "Updates $schema in biome.jsonc",
-			// prettier-ignore
-			fileMatch: ["biome\.jsonc"],
-			datasourceTemplate: "npm",
-			packageNameTemplate: "@biomejs/biome",
-			matchStrings: [
-				// test: https://regex101.com/r/EDnwWL
-				// prettier-ignore
-				"https:\\/\\/biomejs\\.dev\\/schemas\\/(?<currentValue>[0-9.]+)\\/schema\\.json",
 			],
 		},
 	],
