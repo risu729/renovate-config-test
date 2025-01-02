@@ -5,17 +5,11 @@
 	// ref: https://docs.renovatebot.com/modules/manager/regex/#advanced-capture
 	customManagers: [
 		{
-			
 			customType: "regex",
-			fileMatch: [
-				"^README.md$",
-			],
-			matchStrings: [
-				"github>risu729/renovate-config#(?<currentValue>[0-9.]+)",
-			],
+			fileMatch: ["^README.md$"],
+			matchStrings: ["github>risu729/renovate-config#(?<currentValue>[0-9.]+)"],
 			datasourceTemplate: "github-releases",
 			depNameTemplate: "risu729/renovate-config",
-		
-		}
-	]
+		},
+	],
 }
