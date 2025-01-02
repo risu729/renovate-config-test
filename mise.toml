@@ -1,7 +1,7 @@
 # ref: https://mise.jdx.dev/configuration.html
 #:schema https://mise.jdx.dev/schema/mise.json
 
-min_version = "2024.12.24"
+min_version = "2025.1.0"
 
 [tools]
 bun = "1.1.42"
@@ -23,7 +23,7 @@ taplo = "0.9.3"
 "npm:prettier" = "3.4.2"
 yamlfmt = "0.14.0"
 yamllint = "1.35.1"
-"npm:renovate" = "39.86.4"
+"npm:renovate" = "39.87.0"
 "npm:cspell" = "8.17.1"
 "cargo:lychee" = "0.18.0"
 typos = "1.29.0"

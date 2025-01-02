@@ -22,7 +22,7 @@
 		{
 			customType: "regex",
 			description: "Updates tool versions in mise.toml (default registry)",
-			fileMatch: ["mise\.toml", "mise/config\\.toml"],
+			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
 			// cspell:ignore datasource
 			datasourceTemplate: "{{#unless datasource}}github-releases{{else}}{{datasource}}{{/unless}}",
 			matchStrings: [
@@ -35,7 +35,7 @@
 		{
 			customType: "regex",
 			description: "Updates tool versions in mise.toml (Cargo backend)",
-			fileMatch: ["mise\.toml", "mise/config\\.toml"],
+			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
 			datasourceTemplate: "crate",
 			matchStrings: [
 				// test: https://regex101.com/r/K6Imdx
@@ -45,7 +45,7 @@
 		{
 			customType: "regex",
 			description: "Updates tool versions in mise.toml (npm backend)",
-			fileMatch: ["mise\.toml", "mise/config\\.toml"],
+			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
 			datasourceTemplate: "npm",
 			matchStrings: [
 				// test: https://regex101.com/r/avOpdb
@@ -55,7 +55,7 @@
 		{
 			customType: "regex",
 			description: "Updates tool versions in mise.toml (ubi, aqua backend)",
-			fileMatch: ["mise\.toml", "mise/config\\.toml"],
+			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
 			datasourceTemplate: "github-releases",
 			matchStrings: [
 				// test: https://regex101.com/r/RRA3NI
@@ -65,7 +65,7 @@
 		{
 			customType: "regex",
 			description: "Updates min_version in mise config",
-			fileMatch: ["mise\\.toml", "mise/config\\.toml"],
+			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
 			datasourceTemplate: "github-releases",
 			depNameTemplate: "mise",
 			packageNameTemplate: "jdx/mise",
