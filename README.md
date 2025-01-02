@@ -11,3 +11,11 @@ Add the following to your `renovate.json` file:
 	"extends": ["github>risu729/renovate-config"]
 }
 ```
+
+or to use a specific version:
+
+```json
+{
+	"extends": ["github>risu729/renovate-config#1.1.0"]
+}
+```
