@@ -84,7 +84,7 @@
 		// support renovate config presets
 		{
 			customType: "regex",
-			fileMatch: ["^(\\.github)/?renovate\\.json5?$"],
+			fileMatch: ["^(\\.github)\\/?renovate\\.json5?$"],
 			matchStrings: ["github>risu729/renovate-config#(?<currentValue>[0-9.]+)"],
 			datasourceTemplate: "github-releases",
 			depNameTemplate: "risu729/renovate-config",
