@@ -10,7 +10,13 @@ depends = ["buni"]
 run = "bun run git-cz"
 
 [check]
-depends = ["check:*"]
+depends = ["build", "check:*"]
+
+["build"]
+run = "json5 src/default.json5 --out-file default.json"
+depends_post = [
+	"{% if env.CI is defined %}util:nodiff{% else %}util:donothing{% endif %}",
+]
 
 ["check:biome"]
 run = "biome {% if env.LINT is undefined %}check --write{% else %}ci{% endif %} --error-on-warnings"
@@ -60,7 +66,8 @@ run = "yamllint --strict ."
 ["check:renovate"]
 run = [
 	"renovate-config-validator --strict",
-	"renovate-config-validator --strict default.json5",
+	"renovate-config-validator --strict src/default.json5",
+	"renovate-config-validator --strict default.json",
 ]
 
 ["check:cspell"]

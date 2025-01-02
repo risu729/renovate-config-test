@@ -16,6 +16,7 @@ module.exports = {
 		// ignore auto-generated files
 		".gitignore",
 		"bun.lock",
+		"default.json",
 		// ignore license files
 		"LICENSE",
 	],

@@ -38,7 +38,8 @@
 	"files.readonlyInclude": {
 		// auto-generated
 		"**/.gitignore": true,
-		"**/bun.lock": true
+		"**/bun.lock": true,
+		"default.json": true
 	},
 
 	"typescript.disableAutomaticTypeAcquisition": true,
