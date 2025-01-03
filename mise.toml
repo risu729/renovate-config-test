@@ -28,7 +28,7 @@ yamllint = "1.35.1"
 "npm:renovate" = "39.90.2"
 "npm:cspell" = "8.17.1"
 "cargo:lychee" = "0.18.0"
-typos = "1.29.3"
+typos = "1.29.4"
 "npm:ignore-sync" = "8.0.0"
 "npm:json5" = "2.2.3"
 
