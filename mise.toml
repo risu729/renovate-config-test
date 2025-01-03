@@ -13,6 +13,8 @@ uv = "0.5.14"
 "npm:semantic-release" = "24.2.1"
 "aqua:biomejs/biome" = "1.9.4"
 actionlint = "1.7.5"
+# required for actionlint
+shellcheck = "0.10.0"
 # renovate: extractVersion=^v(?<version>.+)
 "aqua:suzuki-shunsuke/ghalint" = "1.2.1" # cspell:ignore shunsuke
 # renovate: extractVersion=^v(?<version>.+)
