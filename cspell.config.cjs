@@ -28,7 +28,6 @@ module.exports = {
 		"ghalint",
 		"pinact",
 		"commitlint",
-		"graphviz",
 		"buni",
 	],
 };
