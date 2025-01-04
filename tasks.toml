@@ -64,6 +64,7 @@ run = "yamlfmt {% if env.LINT is defined %}-lint{% endif %} ."
 run = "yamllint --strict ."
 
 ["check:renovate"]
+depends = ["build"]
 run = [
 	"renovate-config-validator --strict",
 	"renovate-config-validator --strict src/default.json5",
