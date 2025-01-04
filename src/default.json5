@@ -107,19 +107,19 @@
 		},
 		// mise tools
 		{
-			matchManagers: ["regex"],
+			matchManagers: ["custom.regex"],
 			// cspell:ignore binstall
 			matchDepNames: ["cargo-binstall"],
 			overrideDatasource: "crate",
 		},
 		{
-			matchManagers: ["regex"],
+			matchManagers: ["custom.regex"],
 			matchDepNames: ["taplo"],
 			// cspell:ignore tamasfe
 			overridePackageName: "tamasfe/taplo",
 		},
 		{
-			matchManagers: ["regex"],
+			matchManagers: ["custom.regex"],
 			matchDepNames: ["aqua:biomejs/biome"],
 			extractVersion: "^cli-v(?<version>.+)",
 		},
