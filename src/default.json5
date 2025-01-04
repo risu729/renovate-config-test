@@ -37,7 +37,7 @@
 			description: "Updates mise tools (full)",
 			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
 			// supports only cargo, npm, ubi, and aqua backends
-			datasourceTemplate: "{{#if (equals datasource 'cargo')}}crate{{else}} \
+			datasourceTemplate: "{{#if (equals datasource 'cargo')}}crate{{else}}\
 {{#if (or (equals datasource 'ubi') (equals datasource 'aqua'))}}github-releases{{else}}{{datasource}}{{/if}}{{/if}}",
 			currentValueTemplate: "{{{replace '^v(.+)$' '$1' currentValue}}}",
 			extractVersionTemplate: "^v?(?<version>.+)",
