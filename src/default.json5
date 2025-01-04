@@ -17,19 +17,6 @@
 	],
 	// ref: https://docs.renovatebot.com/modules/manager/regex/#advanced-capture
 	customManagers: [
-		// renovate does not support tools not listed
-		// ref: https://docs.renovatebot.com/modules/manager/mise/#additional-information
-		{
-			customType: "regex",
-			description: "Updates mise tools (shorthands)",
-			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
-			// to avoid renovate config validator error
-			datasourceTemplate: "undefined",
-			matchStrings: [
-				// test: https://regex101.com/r/8grHta
-				"['\"]?(?<depName>[^_:\\s]+?)['\"]? *= *['\"](?<currentValue>\\d.+?)['\"]",
-			],
-		},
 		// renovate does not support backends
 		// ref: https://github.com/renovatebot/renovate/issues/30387
 		{
@@ -100,14 +87,16 @@
 			addLabels: ["mise"],
 		},
 		// mise tools
+		// renovate does not support tools not listed
+		// ref: https://docs.renovatebot.com/modules/manager/mise/#additional-information
 		{
-			matchManagers: ["custom.regex"],
+			matchManagers: ["mise"],
 			// cspell:ignore binstall
 			matchDepNames: ["cargo-binstall"],
 			overrideDatasource: "crate",
 		},
 		{
-			matchManagers: ["custom.regex"],
+			matchManagers: ["mise"],
 			matchDepNames: ["taplo"],
 			overrideDatasource: "github-releases",
 			// cspell:ignore tamasfe
