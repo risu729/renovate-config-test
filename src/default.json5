@@ -109,14 +109,14 @@
 			matchManagers: ["regex"],
 			// cspell:ignore binstall
 			matchDepNames: ["cargo-binstall"],
-			datasourceTemplate: "crate",
+			overrideDatasource: "crate",
 		},
 		{
 			matchManagers: ["regex"],
 			matchDepNames: ["taplo"],
-			datasourceTemplate: "github-releases",
+			overrideDatasource: "github-releases",
 			// cspell:ignore tamasfe
-			packageNameTemplate: "tamasfe/taplo",
+			overridePackageName: "tamasfe/taplo",
 		},
 	],
 }
