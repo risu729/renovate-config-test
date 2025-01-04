@@ -118,5 +118,10 @@
 			// cspell:ignore tamasfe
 			overridePackageName: "tamasfe/taplo",
 		},
+		{
+			matchManagers: ["regex"],
+			matchDepNames: ["aqua:biomejs/biome"],
+			extractVersion: "^cli-v(?<version>.+)",
+		}
 	],
 }
