@@ -25,6 +25,7 @@
 			customType: "regex",
 			description: "Updates mise tools (shorthands)",
 			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
+			datasourceTemplate: "github-releases",
 			matchStrings: [
 				// test: https://regex101.com/r/8grHta
 				"['\"]?(?<depName>[^:]+?)['\"]? *= *['\"](?<currentValue>.+?)['\"]",
@@ -114,7 +115,6 @@
 		{
 			matchManagers: ["regex"],
 			matchDepNames: ["taplo"],
-			overrideDatasource: "github-releases",
 			// cspell:ignore tamasfe
 			overridePackageName: "tamasfe/taplo",
 		},
