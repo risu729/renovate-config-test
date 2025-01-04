@@ -38,7 +38,7 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: bun run semantic-release
+        run: semantic-release
 
   actions-timeline:
     needs:
