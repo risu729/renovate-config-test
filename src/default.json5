@@ -19,18 +19,19 @@
 	customManagers: [
 		// renovate does not support tools not listed
 		// ref: https://docs.renovatebot.com/modules/manager/mise/#additional-information
-		// renovate does not support backends
-		// ref: https://github.com/renovatebot/renovate/issues/30387
 		{
 			customType: "regex",
 			description: "Updates mise tools (shorthands)",
 			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
-			datasourceTemplate: "github-releases",
+			// to avoid renovate config validator error
+			datasourceTemplate: "undefined",
 			matchStrings: [
 				// test: https://regex101.com/r/8grHta
-				"['\"]?(?<depName>[^:]+?)['\"]? *= *['\"](?<currentValue>.+?)['\"]",
+				"['\"]?(?<depName>[^_:\\s]+?)['\"]? *= *['\"](?<currentValue>\\d.+?)['\"]",
 			],
 		},
+		// renovate does not support backends
+		// ref: https://github.com/renovatebot/renovate/issues/30387
 		{
 			customType: "regex",
 			description: "Updates mise tools (full)",
@@ -115,6 +116,7 @@
 		{
 			matchManagers: ["custom.regex"],
 			matchDepNames: ["taplo"],
+			overrideDatasource: "github-releases",
 			// cspell:ignore tamasfe
 			overridePackageName: "tamasfe/taplo",
 		},
