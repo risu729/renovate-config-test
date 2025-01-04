@@ -28,6 +28,7 @@ module.exports = {
 		"ghalint",
 		"pinact",
 		"commitlint",
+		"jschema",
 		"buni",
 	],
 };
