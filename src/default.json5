@@ -17,50 +17,38 @@
 	],
 	// ref: https://docs.renovatebot.com/modules/manager/regex/#advanced-capture
 	customManagers: [
-		// support mise
 		// renovate does not support tools not listed
 		// ref: https://docs.renovatebot.com/modules/manager/mise/#additional-information
-		{
-			customType: "regex",
-			description: "Updates tool versions in mise.toml (default registry)",
-			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
-			// cspell:ignore datasource
-			datasourceTemplate: "{{#unless datasource}}github-releases{{else}}{{datasource}}{{/unless}}",
-			matchStrings: [
-				// test: https://regex101.com/r/8grHta
-				'# renovate:(?: datasource=(?<datasource>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?(?: extractVersion=(?<extractVersion>.+?))?\\n"?(?<depName>[^:]+?)"? *= *"(?<currentValue>.+?)"',
-			],
-		},
 		// renovate does not support backends
 		// ref: https://github.com/renovatebot/renovate/issues/30387
 		{
 			customType: "regex",
-			description: "Updates tool versions in mise.toml (Cargo backend)",
+			description: "Updates mise tools (shorthands)",
 			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
-			datasourceTemplate: "crate",
+			matchStrings: [
+				// test: https://regex101.com/r/8grHta
+				"['\"]?(?<depName>[^:]+?)['\"]? *= *['\"](?<currentValue>.+?)['\"]",
+			],
+		},
+		{
+			customType: "regex",
+			description: "Updates mise tools (full)",
+			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
+			// supports only cargo, npm, ubi, and aqua backends
+			datasourceTemplate: `{{#if (equals datasource 'cargo')}}
+				crate
+			{{else}}
+				{{#if (or (equals datasource 'ubi') (equals datasource 'aqua'))}}
+					github-releases
+				{{else}}
+					{{datasource}}
+				{{/if}}
+			{{/if}}`,
+			currentValueTemplate: "{{{replace '^v(.+)$' '$1' currentValue}}}",
+			extractVersionTemplate: "^v?(?<version>.+)",
 			matchStrings: [
 				// test: https://regex101.com/r/K6Imdx
-				'"cargo:(?<depName>.+?)" *= *"(?<currentValue>.+?)"',
-			],
-		},
-		{
-			customType: "regex",
-			description: "Updates tool versions in mise.toml (npm backend)",
-			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
-			datasourceTemplate: "npm",
-			matchStrings: [
-				// test: https://regex101.com/r/avOpdb
-				'"npm:(?<depName>.+?)" *= *"(?<currentValue>.+?)"',
-			],
-		},
-		{
-			customType: "regex",
-			description: "Updates tool versions in mise.toml (ubi, aqua backend)",
-			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
-			datasourceTemplate: "github-releases",
-			matchStrings: [
-				// test: https://regex101.com/r/RRA3NI
-				'(?:# renovate: extractVersion=(?<extractVersion>.+?)\\n)?"(?:ubi|aqua):(?<depName>.+?)" *= *".*?(?<currentValue>\\d+\\..+?)"',
+				"['\"](?<depName>(?<datasource>.+?):(?<packageName>.+?))['\"] *= *['\"](?<currentValue>.+?)['\"]",
 			],
 		},
 		{
@@ -116,5 +104,19 @@
 			matchFileNames: ["mise.toml"],
 			addLabels: ["mise"],
 		},
+		// mise tools
+		{
+			matchManagers: ["regex"],
+			// cspell:ignore binstall
+			matchDepNames: ["cargo-binstall"],
+			datasourceTemplate: "crate",
+		},
+		{
+			matchManagers: ["regex"],
+			matchDepNames: ["taplo"],
+			datasourceTemplate: "github-releases",
+			// cspell:ignore tamasfe
+			packageNameTemplate: "tamasfe/taplo",
+		}
 	],
 }
