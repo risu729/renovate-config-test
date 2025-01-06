@@ -133,6 +133,15 @@
 				"aqua:biomejs/biome"
 			],
 			"extractVersion": "^cli/v(?<version>.+)"
+		},
+		{
+			"matchManagers": [
+				"custom.regex"
+			],
+			"matchDepNames": [
+				"ubi:lycheeverse/lychee"
+			],
+			"extractVersion": "^lychee-v(?<version>.+)"
 		}
 	]
 }
