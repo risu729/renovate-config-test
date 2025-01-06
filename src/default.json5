@@ -124,6 +124,6 @@
 			// cspell:ignore lycheeverse
 			matchDepNames: ["ubi:lycheeverse/lychee"],
 			extractVersion: "^lychee-v(?<version>.+)",
-		}
+		},
 	],
 }
