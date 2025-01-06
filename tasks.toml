@@ -13,7 +13,7 @@ run = "bun run git-cz"
 depends = ["build", "check:*"]
 
 ["build"]
-run = "json5 src/default.json5 --out-file default.json"
+run = "json5 src/default.json5 --out-file default.json --space t"
 depends_post = [
 	"{% if env.CI is defined %}util:nodiff{% else %}util:donothing{% endif %}",
 ]
