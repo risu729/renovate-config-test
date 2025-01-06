@@ -24,6 +24,7 @@
 			description: "Updates mise tools (shorthands)",
 			fileMatch: ["(^|/)\\.?mise\\.toml$", "(^|/)\\.?mise/config\\.toml$"],
 			// to avoid renovate config validator error
+			// Renovate throws "Missing datasource!" warnings but still works
 			datasourceTemplate: "undefined",
 			matchStrings: [
 				// test: https://regex101.com/r/8grHta
