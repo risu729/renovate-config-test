@@ -27,7 +27,7 @@
 			datasourceTemplate: "undefined",
 			matchStrings: [
 				// test: https://regex101.com/r/8grHta
-				"['\"]?(?<depName>[^_:\\s]+?)['\"]? *= *['\"](?<currentValue>\\d.+?)['\"]",
+				"^['\"]?(?<depName>[^_:\\s]+?)['\"]? *= *['\"](?<currentValue>\\d.+?)['\"]",
 			],
 		},
 		// renovate does not support backends
