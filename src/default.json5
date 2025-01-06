@@ -117,7 +117,7 @@
 		{
 			matchManagers: ["custom.regex"],
 			matchDepNames: ["aqua:biomejs/biome"],
-			extractVersion: "^cli-v(?<version>.+)",
+			extractVersion: "^cli/v(?<version>.+)",
 		},
 	],
 }
