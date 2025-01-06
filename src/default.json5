@@ -41,6 +41,7 @@
 			datasourceTemplate: "{{#if (equals datasource 'cargo')}}crate{{else}}\
 {{#if (or (equals datasource 'ubi') (equals datasource 'aqua'))}}github-releases{{else}}{{datasource}}{{/if}}{{/if}}",
 			currentValueTemplate: "{{{replace '^v(.+)$' '$1' currentValue}}}",
+			extractVersionTemplate: "^v?(?<version>.+)",
 			matchStrings: [
 				// test: https://regex101.com/r/K6Imdx
 				"['\"](?<depName>(?<datasource>.+?):(?<packageName>.+?))['\"] *= *['\"](?<currentValue>.+?)['\"]",
