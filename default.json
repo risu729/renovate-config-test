@@ -10,8 +10,16 @@
 		"customManagers:biomeVersions"
 	],
 	"bun": {
-		"fileMatch": [
-			"(^|/)bun\\.lock$"
+		"ignorePaths": [
+			"**/node_modules/**",
+			"**/bower_components/**",
+			"**/vendor/**",
+			"**/examples/**",
+			"**/__tests__/**",
+			"**/test/**",
+			"**/tests/**",
+			"**/__fixtures__/**",
+			"**/bun.lockb"
 		]
 	},
 	"labels": [

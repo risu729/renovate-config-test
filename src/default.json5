@@ -12,9 +12,21 @@
 		"customManagers:biomeVersions",
 	],
 	bun: {
-		// ignore bun.lockb
-		// an empty bun.lockb is required to Bun detected by Cloudflare Workers/Pages Builds
-		fileMatch: ["(^|/)bun\\.lock$"],
+		ignorePaths: [
+			// ignorePaths is not merged
+			// ref: https://docs.renovatebot.com/presets-default/#ignoremodulesandtests
+			"**/node_modules/**",
+			"**/bower_components/**",
+			"**/vendor/**",
+			"**/examples/**",
+			"**/__tests__/**",
+			"**/test/**",
+			"**/tests/**",
+			"**/__fixtures__/**",
+			// ignore bun.lockb
+			// an empty bun.lockb is required to Bun detected by Cloudflare Workers/Pages Builds
+			"**/bun.lockb",
+		],
 	},
 	labels: [
 		"dependencies",
