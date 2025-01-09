@@ -10,6 +10,8 @@
 			matchStrings: ["github>risu729/renovate-config#(?<currentValue>[0-9.]+)"],
 			datasourceTemplate: "github-releases",
 			depNameTemplate: "risu729/renovate-config",
+			// enable automerge for docs
+			automerge: true,
 		},
 	],
 }
