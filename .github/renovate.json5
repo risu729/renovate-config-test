@@ -12,4 +12,11 @@
 			depNameTemplate: "risu729/renovate-config",
 		},
 	],
+	packageRules: [
+		{
+			matchFileNames: ["README.md"],
+			// enable automerge for docs
+			automerge: true,
+		},
+	],
 }
