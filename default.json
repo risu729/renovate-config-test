@@ -9,6 +9,11 @@
 		":prConcurrentLimitNone",
 		"customManagers:biomeVersions"
 	],
+	"bun": {
+		"fileMatch": [
+			"(^|/)bun\\.lock$"
+		]
+	},
 	"labels": [
 		"dependencies",
 		"{{#unless (equals manager 'regex')}}{{manager}}{{/unless}}"

@@ -11,6 +11,11 @@
 		":prConcurrentLimitNone",
 		"customManagers:biomeVersions",
 	],
+	bun: {
+		// ignore bun.lockb
+		// an empty bun.lockb is required to Bun detected by Cloudflare Workers/Pages Builds
+		fileMatch: ["(^|/)bun\\.lock$"],
+	},
 	labels: [
 		"dependencies",
 		"{{#unless (equals manager 'regex')}}{{manager}}{{/unless}}",
