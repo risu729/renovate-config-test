@@ -11,6 +11,7 @@
 		":prConcurrentLimitNone",
 		"customManagers:biomeVersions",
 	],
+	ignorePresets: [":ignoreModulesAndTests"],
 	bun: {
 		ignorePaths: [
 			// ignorePaths is not merged
