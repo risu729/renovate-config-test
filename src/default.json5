@@ -127,13 +127,12 @@
 		},
 		{
 			matchManagers: ["custom.regex"],
-			matchDepNames: ["aqua:biomejs/biome"],
+			matchDepNames: ["biome"],
 			extractVersion: "^cli/v(?<version>.+)",
 		},
 		{
 			matchManagers: ["custom.regex"],
-			// cspell:ignore lycheeverse
-			matchDepNames: ["ubi:lycheeverse/lychee"],
+			matchDepNames: ["lychee"],
 			extractVersion: "^lychee-v(?<version>.+)",
 		},
 	],
