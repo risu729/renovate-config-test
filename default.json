@@ -139,7 +139,7 @@
 				"custom.regex"
 			],
 			"matchDepNames": [
-				"aqua:biomejs/biome"
+				"biome"
 			],
 			"extractVersion": "^cli/v(?<version>.+)"
 		},
@@ -148,7 +148,7 @@
 				"custom.regex"
 			],
 			"matchDepNames": [
-				"ubi:lycheeverse/lychee"
+				"lychee"
 			],
 			"extractVersion": "^lychee-v(?<version>.+)"
 		}
