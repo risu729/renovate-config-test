@@ -46,7 +46,7 @@
 			"currentValueTemplate": "{{{replace '^v(.+)$' '$1' currentValue}}}",
 			"extractVersionTemplate": "^v?(?<version>.+)",
 			"matchStrings": [
-				"['\"](?<depName>(?<datasource>.+?):(?<packageName>.+?))['\"] *= *['\"][^\\d.]*(?<currentValue>.+?)['\"]"
+				"['\"](?<datasource>.+?):(?<depName>.+?)['\"] *= *['\"][^\\d.]*(?<currentValue>.+?)['\"]"
 			]
 		},
 		{
