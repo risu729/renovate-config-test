@@ -55,7 +55,7 @@
 			extractVersionTemplate: "^v?(?<version>.+)",
 			matchStrings: [
 				// test: https://regex101.com/r/K6Imdx
-				"['\"](?<depName>(?<datasource>.+?):(?<packageName>.+?))['\"] *= *['\"][^\\d.]*(?<currentValue>.+?)['\"]",
+				"['\"](?<datasource>.+?):(?<depName>.+?)['\"] *= *['\"][^\\d.]*(?<currentValue>.+?)['\"]",
 			],
 		},
 		{
