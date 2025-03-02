@@ -128,11 +128,16 @@
 		{
 			matchManagers: ["custom.regex"],
 			matchDepNames: ["biome"],
+			overrideDatasource: "github-releases",
+			overridePackageName: "biomejs/biome",
 			extractVersion: "^cli/v(?<version>.+)",
 		},
 		{
 			matchManagers: ["custom.regex"],
 			matchDepNames: ["lychee"],
+			overrideDatasource: "github-releases",
+			// cspell:ignore lycheeverse
+			overridePackageName: "lycheeverse/lychee",
 			extractVersion: "^lychee-v(?<version>.+)",
 		},
 	],
